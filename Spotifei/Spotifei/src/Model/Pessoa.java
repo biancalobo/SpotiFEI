@@ -9,16 +9,16 @@ package Model;
  * @author unifbnascimento
  */
 public class Pessoa {
-    private String nome, user, email, senha;
+    private String nome, nomeUsuario, email, senha;
     private int id;
     
     public Pessoa(){
         
     }
 
-    public Pessoa(String nome,String user, String email, String senha) {
+    public Pessoa(String nome, String nomeUsuario, String email, String senha) {
         this.nome = nome;
-        this.user = user;
+        this.nomeUsuario = nomeUsuario;
         this.email = email;
         this.senha = senha;
     }
@@ -55,20 +55,20 @@ public class Pessoa {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getNomeUsuario() {
+        return nomeUsuario;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
     }
 
     @Override
     public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", user=" + user +
+        return "Pessoa{" + "nome=" + nome + ", nomeUsuario=" + nomeUsuario +
                 ", email=" + email + ", senha=" + senha + ", id=" + id + '}';
     }
+
     
-      
     
 }
