@@ -21,7 +21,7 @@ public class UsuarioDAO {
     }
     
     public ResultSet consultar (Usuario usuario) throws SQLException{
-        String sql = "select * from Usuario where usuario = ? and senha = ?";        
+        String sql = "select * from usuario where nomeusuario = ? and senha = ?";        
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, usuario.getNomeUsuario());
         statement.setString(2, usuario.getSenha());
@@ -31,7 +31,7 @@ public class UsuarioDAO {
     }
     
     public void cadastrarUsuario(Usuario usuario) throws SQLException{
-        String sql = "insert into aluno(nome, nomeUsuario, email, senha)"
+        String sql = "insert into usuario(nome, nomensuario, email, senha)"
                                                             + " values ('" +
                             usuario.getNome() + "','" +
                             usuario.getNomeUsuario() + "','" +
