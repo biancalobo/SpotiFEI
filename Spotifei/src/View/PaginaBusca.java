@@ -3,19 +3,129 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import DAO.HistoricoDAO;
+import Controller.ControllerBusca;
+import Controller.ControllerCadastro;
+import Controller.ControllerCurtida;
+import Model.Musicas;
+import Model.Usuario;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author unifbnascimento
  */
 public class PaginaBusca extends javax.swing.JFrame {
+    private Usuario usuarioLogado;
 
     /**
      * Creates new form PaginaBusca
      */
-    public PaginaBusca() {
+    public PaginaBusca(Usuario usuario) {
         initComponents();
+        this.usuarioLogado = usuario;
+        c = new ControllerBusca(this);
     }
+
+    public void atualizarTabela(ArrayList<Musicas> lista) {
+    DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+    model.setRowCount(0); // Limpa a tabela antes de adicionar novas linhas
+
+    for (Musicas m : lista) {
+        model.addRow(new Object[]{
+            m.getTitulo(),
+            m.getArtista().getNome(),
+            m.getGenero()
+        });
+    }
+}
+    
+    public PaginaBusca(Usuario usuario) {
+    initComponents();
+    this.usuarioLogado = usuario;
+    c = new ControllerBusca(this);
+    
+    // Escuta seleção na tabela
+    tabela.getSelectionModel().addListSelectionListener(e -> {
+        if (!e.getValueIsAdjusting()) {
+            atualizarBotaoCurtir();
+        }
+    });
+}
+
+private void atualizarBotaoCurtir() {
+    int linha = tabela.getSelectedRow();
+    if (linha != -1) {
+        int musicaId = (int) tabela.getValueAt(linha, 0); // coluna oculta com o ID
+        ControllerCurtida controller = new ControllerCurtida();
+        boolean jaCurtida = controller.isCurtida(usuarioLogado.getId(), musicaId);
+        bt_curtir.setSelected(jaCurtida);
+        bt_curtir.setText(jaCurtida ? "Descurtir" : "Curtir");
+        bt_curtir.setEnabled(true);
+    } else {
+        bt_curtir.setSelected(false);
+        bt_curtir.setText("Curtir");
+        bt_curtir.setEnabled(false);
+    }
+}
+    
+    public JButton getBt_procurar_musica() {
+        return bt_procurar_musica;
+    }
+
+    public void setBt_procurar_musica(JButton bt_procurar_musica) {
+        this.bt_procurar_musica = bt_procurar_musica;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JLabel getLb_buscar_musica() {
+        return lb_buscar_musica;
+    }
+
+    public void setLb_buscar_musica(JLabel lb_buscar_musica) {
+        this.lb_buscar_musica = lb_buscar_musica;
+    }
+
+    public JTable getTabela() {
+        return tabela;
+    }
+
+    public void setTabela(JTable tabela) {
+        this.tabela = tabela;
+    }
+
+    public JTextField getTxt_buscar_musica() {
+        return txt_buscar_musica;
+    }
+
+    public void setTxt_buscar_musica(JTextField txt_buscar_musica) {
+        this.txt_buscar_musica = txt_buscar_musica;
+    }
+
+    public JToggleButton getBt_curtir() {
+        return bt_curtir;
+    }
+
+    public void setBt_curtir(JToggleButton bt_curtir) {
+        this.bt_curtir = bt_curtir;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,6 +140,9 @@ public class PaginaBusca extends javax.swing.JFrame {
         lb_buscar_musica = new javax.swing.JLabel();
         txt_buscar_musica = new javax.swing.JTextField();
         bt_procurar_musica = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabela = new javax.swing.JTable();
+        bt_curtir = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -46,22 +159,83 @@ public class PaginaBusca extends javax.swing.JFrame {
             }
         });
 
-        bt_procurar_musica.setBackground(new java.awt.Color(0, 0, 0));
-        bt_procurar_musica.setForeground(new java.awt.Color(255, 0, 153));
+        bt_procurar_musica.setBackground(new java.awt.Color(255, 0, 153));
+        bt_procurar_musica.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bt_procurar_musica.setText("Buscar");
+        bt_procurar_musica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_procurar_musicaActionPerformed(evt);
+            }
+        });
+
+        tabela.setBackground(new java.awt.Color(0, 0, 0));
+        tabela.setForeground(new java.awt.Color(255, 0, 153));
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Id", "Título", "Artista", "Gênero"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabela);
+        if (tabela.getColumnModel().getColumnCount() > 0) {
+            tabela.getColumnModel().getColumn(0).setMinWidth(0);
+            tabela.getColumnModel().getColumn(0).setPreferredWidth(0);
+            tabela.getColumnModel().getColumn(0).setMaxWidth(0);
+            tabela.getColumnModel().getColumn(1).setResizable(false);
+            tabela.getColumnModel().getColumn(2).setResizable(false);
+            tabela.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        bt_curtir.setBackground(new java.awt.Color(255, 0, 153));
+        bt_curtir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_curtir.setText("Curtir");
+        bt_curtir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_curtirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(lb_buscar_musica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bt_procurar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bt_curtir)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lb_buscar_musica)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_procurar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 27, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,23 +245,24 @@ public class PaginaBusca extends javax.swing.JFrame {
                     .addComponent(lb_buscar_musica)
                     .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_procurar_musica))
-                .addContainerGap(444, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(bt_curtir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -97,45 +272,82 @@ public class PaginaBusca extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_buscar_musicaActionPerformed
 
+    private void bt_procurar_musicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_procurar_musicaActionPerformed
+        // TODO add your handling code here:
+    String termo = txt_buscar_musica.getText();
+    String tipo = "nome"; // ou use ComboBox
+
+     ArrayList<Musicas> lista = c.buscar(tipo, termo);
+    atualizarTabela(lista);
+       
+    }//GEN-LAST:event_bt_procurar_musicaActionPerformed
+
+    private void bt_curtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirActionPerformed
+        // TODO add your handling code here:
+        int linha = tabela.getSelectedRow();
+
+    if (linha != -1) {
+        int musicaId = (int) tabela.getValueAt(linha, 0); // ID oculto da música
+        boolean curtir = bt_curtir.isSelected();
+
+        ControllerCurtida controller = new ControllerCurtida();
+        controller.curtir(usuarioLogado.getId(), musicaId, curtir);
+
+        if (curtir) {
+            JOptionPane.showMessageDialog(this, "Música curtida!");
+            bt_curtir.setText("Descurtir");
+        } else {
+            JOptionPane.showMessageDialog(this, "Música descurtida!");
+            bt_curtir.setText("Curtir");
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Selecione uma música.");
+    }
+    }//GEN-LAST:event_bt_curtirActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaginaBusca().setVisible(true);
-            }
-        });
-    }
-
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaginaBusca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaginaBusca().setVisible(true);
+//            }
+//        });
+//    }
+    private ControllerBusca c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton bt_curtir;
     private javax.swing.JButton bt_procurar_musica;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lb_buscar_musica;
+    private javax.swing.JTable tabela;
     private javax.swing.JTextField txt_buscar_musica;
     // End of variables declaration//GEN-END:variables
+
 }

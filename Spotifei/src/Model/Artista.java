@@ -10,20 +10,15 @@ import java.time.LocalDate;
  * @author unifbnascimento
  */
 public class Artista {
-    private String nome, biografia;
-    private LocalDate nacionalidade;
+    private String nome;
     private int id;
    
     public Artista(){
         
     }
 
-    public Artista(String nome, String biografia, LocalDate nacionalidade,
-                                                                int id) {
+    public Artista(String nome) {
         this.nome = nome;
-        this.biografia = biografia;
-        this.nacionalidade = nacionalidade;
-        this.id = id;
     }
 
     public String getNome() {
@@ -32,22 +27,6 @@ public class Artista {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getBiografia() {
-        return biografia;
-    }
-
-    public void setBiografia(String biografia) {
-        this.biografia = biografia;
-    }
-
-    public LocalDate getNacionalidade() {
-        return nacionalidade;
-    }
-
-    public void setNacionalidade(LocalDate nacionalidade) {
-        this.nacionalidade = nacionalidade;
     }
 
     public int getId() {
@@ -60,8 +39,7 @@ public class Artista {
 
     @Override
     public String toString() {
-        return "Artista{" + "nome=" + nome + ", biografia=" + biografia +
-                    ", nacionalidade=" + nacionalidade + ", id=" + id + '}';
+        return "Artista{" + "nome=" + nome + ", id=" + id + '}';
     }
     
     

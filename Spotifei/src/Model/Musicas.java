@@ -16,8 +16,7 @@ public class Musicas {
     public Musicas() {
     }
 
-    public Musicas(int id, String titulo, String genero, Artista artista) {
-        this.id = id;
+    public Musicas(String titulo, String genero, Artista artista) {
         this.titulo = titulo;
         this.genero = genero;
         this.artista = artista;
