@@ -4,6 +4,13 @@
  */
 package View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import Controller.ControllerCadastro;
+
 /**
  *
  * @author unifbnascimento
@@ -15,7 +22,106 @@ public class PaginaCadastro extends javax.swing.JFrame {
      */
     public PaginaCadastro() {
         initComponents();
+        c = new ControllerCadastro(this);
     }
+
+    public JButton getBt_cadastrar() {
+        return bt_cadastrar;
+    }
+
+    public void setBt_cadastrar(JButton bt_cadastrar) {
+        this.bt_cadastrar = bt_cadastrar;
+    }
+
+    public JToggleButton getjToggleButton1() {
+        return jToggleButton1;
+    }
+
+    public void setjToggleButton1(JToggleButton jToggleButton1) {
+        this.jToggleButton1 = jToggleButton1;
+    }
+
+    public JLabel getLb_cadastro_email() {
+        return lb_cadastro_email;
+    }
+
+    public void setLb_cadastro_email(JLabel lb_cadastro_email) {
+        this.lb_cadastro_email = lb_cadastro_email;
+    }
+
+    public JLabel getLb_cadastro_email1() {
+        return lb_cadastro_email1;
+    }
+
+    public void setLb_cadastro_email1(JLabel lb_cadastro_email1) {
+        this.lb_cadastro_email1 = lb_cadastro_email1;
+    }
+
+    public JLabel getLb_cadastro_nome() {
+        return lb_cadastro_nome;
+    }
+
+    public void setLb_cadastro_nome(JLabel lb_cadastro_nome) {
+        this.lb_cadastro_nome = lb_cadastro_nome;
+    }
+
+    public JLabel getLb_cadastro_senha() {
+        return lb_cadastro_senha;
+    }
+
+    public void setLb_cadastro_senha(JLabel lb_cadastro_senha) {
+        this.lb_cadastro_senha = lb_cadastro_senha;
+    }
+
+    public JLabel getLb_cadastro_usuario() {
+        return lb_cadastro_usuario;
+    }
+
+    public void setLb_cadastro_usuario(JLabel lb_cadastro_usuario) {
+        this.lb_cadastro_usuario = lb_cadastro_usuario;
+    }
+
+    public JLabel getLb_inscrever_spotifei() {
+        return lb_inscrever_spotifei;
+    }
+
+    public void setLb_inscrever_spotifei(JLabel lb_inscrever_spotifei) {
+        this.lb_inscrever_spotifei = lb_inscrever_spotifei;
+    }
+
+    public JTextField getTxt_cadastro_email() {
+        return txt_cadastro_email;
+    }
+
+    public void setTxt_cadastro_email(JTextField txt_cadastro_email) {
+        this.txt_cadastro_email = txt_cadastro_email;
+    }
+
+    public JTextField getTxt_cadastro_nome() {
+        return txt_cadastro_nome;
+    }
+
+    public void setTxt_cadastro_nome(JTextField txt_cadastro_nome) {
+        this.txt_cadastro_nome = txt_cadastro_nome;
+    }
+
+    public JPasswordField getTxt_cadastro_senha() {
+        return txt_cadastro_senha;
+    }
+
+    public void setTxt_cadastro_senha(JPasswordField txt_cadastro_senha) {
+        this.txt_cadastro_senha = txt_cadastro_senha;
+    }
+
+    public JTextField getTxt_cadastro_usuario() {
+        return txt_cadastro_usuario;
+    }
+
+    public void setTxt_cadastro_usuario(JTextField txt_cadastro_usuario) {
+        this.txt_cadastro_usuario = txt_cadastro_usuario;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -184,43 +290,46 @@ public class PaginaCadastro extends javax.swing.JFrame {
 
     private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
         // TODO add your handling code here:
+        c.cadastrarUsuario();
     }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaginaCadastro().setVisible(true);
-            }
-        });
-    }
-
+    
+    
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaginaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaginaCadastro().setVisible(true);
+//            }
+//        });
+//    }
+    private ControllerCadastro c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastrar;
     private javax.swing.JPanel jPanel1;

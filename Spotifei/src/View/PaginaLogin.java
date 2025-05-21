@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
-import Model.Usuario;
 import Controller.ControllerLogin;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -17,7 +21,82 @@ public class PaginaLogin extends javax.swing.JFrame {
      */
     public PaginaLogin() {
         initComponents();
+        c = new ControllerLogin(this);
     }
+
+    public JButton getBt_entrar() {
+        return bt_entrar;
+    }
+
+    public void setBt_entrar(JButton bt_entrar) {
+        this.bt_entrar = bt_entrar;
+    }
+
+    public JButton getBt_menu_cadastrar() {
+        return bt_menu_cadastrar;
+    }
+
+    public void setBt_menu_cadastrar(JButton bt_menu_cadastrar) {
+        this.bt_menu_cadastrar = bt_menu_cadastrar;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JLabel getLb_login_senha() {
+        return lb_login_senha;
+    }
+
+    public void setLb_login_senha(JLabel lb_login_senha) {
+        this.lb_login_senha = lb_login_senha;
+    }
+
+    public JLabel getLb_login_usuario() {
+        return lb_login_usuario;
+    }
+
+    public void setLb_login_usuario(JLabel lb_login_usuario) {
+        this.lb_login_usuario = lb_login_usuario;
+    }
+
+    public JLabel getLb_spotifei() {
+        return lb_spotifei;
+    }
+
+    public void setLb_spotifei(JLabel lb_spotifei) {
+        this.lb_spotifei = lb_spotifei;
+    }
+
+    public JLabel getLbl_nao_tem_conta() {
+        return lbl_nao_tem_conta;
+    }
+
+    public void setLbl_nao_tem_conta(JLabel lbl_nao_tem_conta) {
+        this.lbl_nao_tem_conta = lbl_nao_tem_conta;
+    }
+
+    public JPasswordField getTxt_login_senha() {
+        return txt_login_senha;
+    }
+
+    public void setTxt_login_senha(JPasswordField txt_login_senha) {
+        this.txt_login_senha = txt_login_senha;
+    }
+
+    public JTextField getTxt_login_usuario() {
+        return txt_login_usuario;
+    }
+
+    public void setTxt_login_usuario(JTextField txt_login_usuario) {
+        this.txt_login_usuario = txt_login_usuario;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,10 +234,14 @@ public class PaginaLogin extends javax.swing.JFrame {
 
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
         // TODO add your handling code here:
+        c.loginUsuario();
     }//GEN-LAST:event_bt_entrarActionPerformed
 
     private void bt_menu_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_cadastrarActionPerformed
         // TODO add your handling code here:
+        PaginaCadastro pc = new PaginaCadastro();
+        pc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bt_menu_cadastrarActionPerformed
 
     /**
@@ -195,7 +278,7 @@ public class PaginaLogin extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerLogin c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_entrar;
     private javax.swing.JButton bt_menu_cadastrar;

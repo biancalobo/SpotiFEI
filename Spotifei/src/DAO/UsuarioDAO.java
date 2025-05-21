@@ -4,10 +4,7 @@
  */
 package DAO;
 import Model.Usuario;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.ResultSet;
+import java.sql.*;
 
 /**
  *
@@ -20,26 +17,35 @@ public class UsuarioDAO {
         this.conn = conn;
     }
     
-    public ResultSet consultar (Usuario usuario) throws SQLException{
-        String sql = "select * from usuario where nomeusuario = ? and senha = ?";        
-        PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, usuario.getNomeUsuario());
-        statement.setString(2, usuario.getSenha());
-        statement.execute();
-        ResultSet resultado = statement.getResultSet();
-        return resultado;
+    public Usuario login(String nomeUsuario, String senha) throws SQLException {
+        String sql = "select * from usuario where nomeusuario = ?"
+                                                            + " and senha = ?";
+        try (PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setString(1, nomeUsuario);
+            statement.setString(2, senha);
+            ResultSet resultado = statement.executeQuery();
+            if (resultado.next()) {
+                return new Usuario(
+                    resultado.getString("nome"),
+                    resultado.getString("nomeUsuario"),
+                    resultado.getString("email"),
+                    resultado.getString("senha")
+                );
+            } else {
+                return null;
+            }
+        }
     }
     
-    public void cadastrarUsuario(Usuario usuario) throws SQLException{
-        String sql = "insert into usuario(nome, nomensuario, email, senha)"
-                                                            + " values ('" +
-                            usuario.getNome() + "','" +
-                            usuario.getNomeUsuario() + "','" +
-                            usuario.getEmail() + "','" +
-                            usuario.getSenha() + "')";
-        PreparedStatement statement = conn.prepareStatement(sql);
-        statement.execute();
-        conn.close();
-    }
+    public void cadastrar(Usuario usuario) throws SQLException {
+        String sql = "INSERT INTO usuarios (nome, nome_user, email, senha_hash) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, usuario.getNome());
+            ps.setString(2, usuario.getNomeUsuario());
+            ps.setString(3, usuario.getEmail());
+            ps.setString(4, usuario.getSenha());
+            ps.executeUpdate();
+        }
     
+}
 }

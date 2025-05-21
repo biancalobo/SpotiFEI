@@ -3,11 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
+import DAO.UsuarioDAO;
+import DAO.Conexao;
+import View.PaginaCadastro;
+import Model.Usuario;
+import javax.swing.JOptionPane;
+import java.sql.*;
+
 
 /**
  *
  * @author unifbnascimento
  */
 public class ControllerCadastro {
+    private PaginaCadastro view;
     
+    public ControllerCadastro(PaginaCadastro view){
+        this.view = view;
+    }
+    
+    public void cadastrarUsuario(){
+        String nome = view.getTxt_cadastro_nome().getText();
+        String nomeUsuario = view.getTxt_cadastro_usuario().getText();
+        String email = view.getTxt_cadastro_email().getText();
+        String senha = view.getTxt_cadastro_senha().getText();
+        Usuario usuario = new Usuario(nome, nomeUsuario, email, senha);
+        Conexao conexao = new Conexao();
+        try{
+            Connection conn = conexao.getConnection();
+            UsuarioDAO dao = new UsuarioDAO(conn);
+            dao.cadastrar(usuario);
+            JOptionPane.showMessageDialog(view, "Usuário cadastrado!");
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(view, "Erro de conexão!");
+        }
+    }
 }
+    
+

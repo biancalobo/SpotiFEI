@@ -10,12 +10,14 @@ package Model;
  */
 public class Musicas {
    private String titulo, genero;
+   private int id;
    private Artista artista;
 
     public Musicas() {
     }
 
-    public Musicas(String titulo, String genero, Artista artista) {
+    public Musicas(int id, String titulo, String genero, Artista artista) {
+        this.id = id;
         this.titulo = titulo;
         this.genero = genero;
         this.artista = artista;
@@ -45,12 +47,19 @@ public class Musicas {
         this.artista = artista;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Musicas{" + "titulo=" + titulo + ", genero=" + genero +
-                                ", artista=" + artista + '}';
+        return "Musicas{" + "titulo=" + titulo + ", genero=" + genero + ", id=" + id + ", artista=" + artista + '}';
     }
-    
+
     
    
 }
