@@ -26,59 +26,42 @@ public class PaginaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lb_inscrever_spotifei = new javax.swing.JLabel();
-        lb_cadastro_usuario = new javax.swing.JLabel();
-        txt_cadastro_usuario = new javax.swing.JTextField();
-        lb_cadastro_email = new javax.swing.JLabel();
-        txt_cadastro_email = new javax.swing.JTextField();
-        txt_cadastro_senha = new javax.swing.JPasswordField();
+        jToggleButton1 = new javax.swing.JToggleButton();
         lb_cadastro_email1 = new javax.swing.JLabel();
-        lb_cadastro_senha = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         bt_cadastrar = new javax.swing.JButton();
-        lb_cadastro_nome = new javax.swing.JLabel();
+        lb_cadastro_senha = new javax.swing.JLabel();
         txt_cadastro_nome = new javax.swing.JTextField();
+        txt_cadastro_senha = new javax.swing.JPasswordField();
+        lb_cadastro_nome = new javax.swing.JLabel();
+        txt_cadastro_email = new javax.swing.JTextField();
+        lb_cadastro_email = new javax.swing.JLabel();
+        lb_inscrever_spotifei = new javax.swing.JLabel();
+        txt_cadastro_usuario = new javax.swing.JTextField();
+        lb_cadastro_usuario = new javax.swing.JLabel();
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Página de cadastro");
 
-        lb_inscrever_spotifei.setFont(new java.awt.Font("Segoe UI", 3, 50)); // NOI18N
-        lb_inscrever_spotifei.setForeground(new java.awt.Color(255, 0, 204));
-        lb_inscrever_spotifei.setText("Inscreva-se no Spotifei");
-
-        lb_cadastro_usuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_cadastro_usuario.setForeground(new java.awt.Color(255, 0, 204));
-        lb_cadastro_usuario.setText("Nome de usuário*");
-
-        txt_cadastro_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_cadastro_usuarioActionPerformed(evt);
-            }
-        });
-
-        lb_cadastro_email.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_cadastro_email.setForeground(new java.awt.Color(255, 0, 204));
-        lb_cadastro_email.setText("Endereço de e-mail*");
-
-        txt_cadastro_email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_cadastro_emailActionPerformed(evt);
-            }
-        });
-
         lb_cadastro_email1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lb_cadastro_email1.setForeground(new java.awt.Color(255, 0, 204));
 
-        lb_cadastro_senha.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_cadastro_senha.setForeground(new java.awt.Color(255, 0, 204));
-        lb_cadastro_senha.setText("Senha*");
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         bt_cadastrar.setBackground(new java.awt.Color(255, 0, 153));
         bt_cadastrar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         bt_cadastrar.setText("Cadastrar");
+        bt_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_cadastrarActionPerformed(evt);
+            }
+        });
 
-        lb_cadastro_nome.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_cadastro_nome.setForeground(new java.awt.Color(255, 0, 204));
-        lb_cadastro_nome.setText("Nome*");
+        lb_cadastro_senha.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_cadastro_senha.setForeground(new java.awt.Color(255, 0, 204));
+        lb_cadastro_senha.setText("Senha*");
 
         txt_cadastro_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,28 +69,88 @@ public class PaginaCadastro extends javax.swing.JFrame {
             }
         });
 
+        lb_cadastro_nome.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_cadastro_nome.setForeground(new java.awt.Color(255, 0, 204));
+        lb_cadastro_nome.setText("Nome*");
+
+        txt_cadastro_email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_cadastro_emailActionPerformed(evt);
+            }
+        });
+
+        lb_cadastro_email.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_cadastro_email.setForeground(new java.awt.Color(255, 0, 204));
+        lb_cadastro_email.setText("Endereço de e-mail*");
+
+        lb_inscrever_spotifei.setFont(new java.awt.Font("Segoe UI", 3, 50)); // NOI18N
+        lb_inscrever_spotifei.setForeground(new java.awt.Color(255, 0, 204));
+        lb_inscrever_spotifei.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_inscrever_spotifei.setText("Inscreva-se no Spotifei");
+
+        txt_cadastro_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_cadastro_usuarioActionPerformed(evt);
+            }
+        });
+
+        lb_cadastro_usuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_cadastro_usuario.setForeground(new java.awt.Color(255, 0, 204));
+        lb_cadastro_usuario.setText("Nome de usuário*");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lb_cadastro_nome)
+                    .addComponent(lb_cadastro_senha)
+                    .addComponent(lb_cadastro_email)
+                    .addComponent(lb_cadastro_usuario)
+                    .addComponent(txt_cadastro_usuario)
+                    .addComponent(txt_cadastro_email)
+                    .addComponent(txt_cadastro_senha)
+                    .addComponent(bt_cadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_cadastro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(144, 144, 144))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_inscrever_spotifei, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lb_inscrever_spotifei)
+                .addGap(18, 18, 18)
+                .addComponent(lb_cadastro_nome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_cadastro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_cadastro_usuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_cadastro_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_cadastro_email)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_cadastro_email, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_cadastro_senha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txt_cadastro_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 125, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lb_inscrever_spotifei, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lb_cadastro_nome)
-                            .addComponent(lb_cadastro_senha)
-                            .addComponent(lb_cadastro_email)
-                            .addComponent(lb_cadastro_usuario)
-                            .addComponent(txt_cadastro_usuario)
-                            .addComponent(txt_cadastro_email)
-                            .addComponent(txt_cadastro_senha)
-                            .addComponent(bt_cadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                            .addComponent(txt_cadastro_nome))
-                        .addGap(139, 139, 139))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(82, 82, 82)
@@ -116,33 +159,12 @@ public class PaginaCadastro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lb_inscrever_spotifei)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lb_cadastro_nome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cadastro_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(lb_cadastro_usuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cadastro_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lb_cadastro_email)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cadastro_email, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lb_cadastro_senha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cadastro_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(bt_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(210, 210, 210)
                     .addComponent(lb_cadastro_email1)
-                    .addContainerGap(327, Short.MAX_VALUE)))
+                    .addContainerGap(337, Short.MAX_VALUE)))
         );
 
         pack();
@@ -159,6 +181,10 @@ public class PaginaCadastro extends javax.swing.JFrame {
     private void txt_cadastro_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_cadastro_nomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_cadastro_nomeActionPerformed
+
+    private void bt_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_cadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +223,8 @@ public class PaginaCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_cadastrar;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lb_cadastro_email;
     private javax.swing.JLabel lb_cadastro_email1;
     private javax.swing.JLabel lb_cadastro_nome;

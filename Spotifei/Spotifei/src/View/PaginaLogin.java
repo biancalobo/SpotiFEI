@@ -28,41 +28,26 @@ public class PaginaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lb_spotifei = new javax.swing.JLabel();
+        bt_entrar = new javax.swing.JButton();
+        txt_login_senha = new javax.swing.JPasswordField();
         lb_login_usuario = new javax.swing.JLabel();
         txt_login_usuario = new javax.swing.JTextField();
         lb_login_senha = new javax.swing.JLabel();
         lbl_nao_tem_conta = new javax.swing.JLabel();
-        bt_entrar = new javax.swing.JButton();
-        lbl_esqueceu_senha = new javax.swing.JLabel();
-        lbl_inscrever = new javax.swing.JLabel();
-        txt_login_senha = new javax.swing.JPasswordField();
+        bt_menu_cadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Página de Login");
         setBackground(new java.awt.Color(0, 0, 0));
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
         lb_spotifei.setFont(new java.awt.Font("Segoe UI", 3, 50)); // NOI18N
-        lb_spotifei.setForeground(new java.awt.Color(255, 0, 204));
+        lb_spotifei.setForeground(new java.awt.Color(255, 0, 153));
+        lb_spotifei.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_spotifei.setText("Spotifei");
-
-        lb_login_usuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_login_usuario.setForeground(new java.awt.Color(255, 0, 204));
-        lb_login_usuario.setText("Nome de usuário");
-
-        txt_login_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_login_usuarioActionPerformed(evt);
-            }
-        });
-
-        lb_login_senha.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lb_login_senha.setForeground(new java.awt.Color(255, 0, 204));
-        lb_login_senha.setText("Senha:");
-
-        lbl_nao_tem_conta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lbl_nao_tem_conta.setForeground(new java.awt.Color(255, 0, 204));
-        lbl_nao_tem_conta.setText("Não tem conta?");
 
         bt_entrar.setBackground(new java.awt.Color(255, 0, 153));
         bt_entrar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -73,66 +58,92 @@ public class PaginaLogin extends javax.swing.JFrame {
             }
         });
 
-        lbl_esqueceu_senha.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lbl_esqueceu_senha.setForeground(new java.awt.Color(255, 0, 204));
-        lbl_esqueceu_senha.setText("Esqueceu a senha?");
+        lb_login_usuario.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_login_usuario.setForeground(new java.awt.Color(255, 0, 153));
+        lb_login_usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_login_usuario.setText("Nome de usuário");
 
-        lbl_inscrever.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        lbl_inscrever.setForeground(new java.awt.Color(255, 0, 204));
-        lbl_inscrever.setText("Inscrever-se no Spotifei");
+        txt_login_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_login_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_login_usuarioActionPerformed(evt);
+            }
+        });
+
+        lb_login_senha.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lb_login_senha.setForeground(new java.awt.Color(255, 0, 153));
+        lb_login_senha.setText("Senha:");
+
+        lbl_nao_tem_conta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lbl_nao_tem_conta.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_nao_tem_conta.setText("Não tem conta?");
+
+        bt_menu_cadastrar.setBackground(new java.awt.Color(0, 0, 0));
+        bt_menu_cadastrar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        bt_menu_cadastrar.setForeground(new java.awt.Color(255, 0, 153));
+        bt_menu_cadastrar.setText("Cadastra-se");
+        bt_menu_cadastrar.setBorder(null);
+        bt_menu_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_menu_cadastrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addComponent(lbl_nao_tem_conta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_menu_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_login_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_login_senha)
+                            .addComponent(txt_login_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_login_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(218, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_spotifei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(lb_spotifei)
+                .addGap(41, 41, 41)
+                .addComponent(lb_login_usuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_login_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lb_login_senha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_login_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(bt_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_nao_tem_conta)
+                    .addComponent(bt_menu_cadastrar))
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lb_spotifei, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(193, 193, 193))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lb_login_senha)
-                            .addComponent(lb_login_usuario)
-                            .addComponent(txt_login_usuario)
-                            .addComponent(bt_entrar, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                            .addComponent(txt_login_senha))
-                        .addContainerGap(186, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(lbl_nao_tem_conta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_inscrever, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(lbl_esqueceu_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(lb_spotifei)
-                .addGap(39, 39, 39)
-                .addComponent(lb_login_usuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_login_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lb_login_senha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_login_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addComponent(bt_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_esqueceu_senha)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_nao_tem_conta)
-                    .addComponent(lbl_inscrever))
-                .addContainerGap(87, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,6 +156,10 @@ public class PaginaLogin extends javax.swing.JFrame {
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_entrarActionPerformed
+
+    private void bt_menu_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_cadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_menu_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,11 +198,11 @@ public class PaginaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_entrar;
+    private javax.swing.JButton bt_menu_cadastrar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_login_senha;
     private javax.swing.JLabel lb_login_usuario;
     private javax.swing.JLabel lb_spotifei;
-    private javax.swing.JLabel lbl_esqueceu_senha;
-    private javax.swing.JLabel lbl_inscrever;
     private javax.swing.JLabel lbl_nao_tem_conta;
     private javax.swing.JPasswordField txt_login_senha;
     private javax.swing.JTextField txt_login_usuario;
