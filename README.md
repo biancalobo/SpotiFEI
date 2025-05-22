@@ -1,8 +1,7 @@
 # Spotifei
+Projeto de Arquitetura de Software e Programação Orientada a Objetos
 
 # Sobre o projeto Spotifei
-
-Spotifei é uma plataforma de informações de áudio digitais, onde é possível buscar por músicas e artistas.
 
 Spotifei é uma aplicação desktop desenvolvida em Java, utilizando o padrão MVC (Model-View-Controller), com interface gráfica via Java Swing e persistência de dados em PostgreSQL.
 
