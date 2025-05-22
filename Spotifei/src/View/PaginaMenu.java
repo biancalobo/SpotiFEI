@@ -29,8 +29,10 @@ public class PaginaMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         bt_menu_biblioteca = new javax.swing.JButton();
-        bt_menu_buscar = new javax.swing.JButton();
         bt_menu_historico = new javax.swing.JButton();
+        lbl_menu = new javax.swing.JLabel();
+        bt_menu_buscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -41,6 +43,7 @@ public class PaginaMenu extends javax.swing.JFrame {
         jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jToolBar1.setRollover(true);
 
+        bt_menu_biblioteca.setBackground(new java.awt.Color(0, 0, 0));
         bt_menu_biblioteca.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         bt_menu_biblioteca.setForeground(new java.awt.Color(255, 0, 153));
         bt_menu_biblioteca.setText("Biblioteca");
@@ -51,10 +54,29 @@ public class PaginaMenu extends javax.swing.JFrame {
         });
         jToolBar1.add(bt_menu_biblioteca);
 
-        bt_menu_buscar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        bt_menu_historico.setBackground(new java.awt.Color(0, 0, 0));
+        bt_menu_historico.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        bt_menu_historico.setForeground(new java.awt.Color(255, 0, 153));
+        bt_menu_historico.setText("Histórico");
+        bt_menu_historico.setFocusable(false);
+        bt_menu_historico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_menu_historico.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bt_menu_historico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_menu_historicoActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(bt_menu_historico);
+
+        lbl_menu.setFont(new java.awt.Font("Segoe UI", 3, 60)); // NOI18N
+        lbl_menu.setForeground(new java.awt.Color(255, 0, 153));
+        lbl_menu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_menu.setText("Bem-vindo(a)!");
+
+        bt_menu_buscar.setBackground(new java.awt.Color(0, 0, 0));
+        bt_menu_buscar.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         bt_menu_buscar.setForeground(new java.awt.Color(255, 0, 153));
         bt_menu_buscar.setText("Buscar Música");
-        bt_menu_buscar.setFocusable(false);
         bt_menu_buscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_menu_buscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         bt_menu_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -62,23 +84,31 @@ public class PaginaMenu extends javax.swing.JFrame {
                 bt_menu_buscarActionPerformed(evt);
             }
         });
-        jToolBar1.add(bt_menu_buscar);
 
-        bt_menu_historico.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        bt_menu_historico.setForeground(new java.awt.Color(255, 0, 153));
-        bt_menu_historico.setText("Histórico");
-        bt_menu_historico.setFocusable(false);
-        bt_menu_historico.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bt_menu_historico.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(bt_menu_historico);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 153));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ouça suas músicas e artistas preferidos.");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(243, 243, 243)
+                                .addComponent(jLabel1))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(265, 265, 265)
+                                .addComponent(bt_menu_buscar))
+                            .addComponent(lbl_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 101, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -86,7 +116,13 @@ public class PaginaMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(530, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addComponent(lbl_menu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(69, 69, 69)
+                .addComponent(bt_menu_buscar)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,52 +143,67 @@ public class PaginaMenu extends javax.swing.JFrame {
 
     private void bt_menu_bibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_bibliotecaActionPerformed
         // TODO add your handling code here:
+        PaginaPlaylist pp = new PaginaPlaylist();
+        pp.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bt_menu_bibliotecaActionPerformed
 
     private void bt_menu_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_buscarActionPerformed
         // TODO add your handling code here:
+        PaginaMusicas pm = new PaginaMusicas();
+        pm.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bt_menu_buscarActionPerformed
+
+    private void bt_menu_historicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_historicoActionPerformed
+        // TODO add your handling code here:
+        PaginaHistorico ph = new PaginaHistorico();
+        ph.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_bt_menu_historicoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaginaMenu().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaginaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaginaMenu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_menu_biblioteca;
     private javax.swing.JButton bt_menu_buscar;
     private javax.swing.JButton bt_menu_historico;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel lbl_menu;
     // End of variables declaration//GEN-END:variables
 }

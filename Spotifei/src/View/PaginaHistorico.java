@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.ControllerHistorico;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author bianc
@@ -14,8 +19,53 @@ public class PaginaHistorico extends javax.swing.JFrame {
      */
     public PaginaHistorico() {
         initComponents();
+        c = new ControllerHistorico(this);
     }
 
+    public JButton getBt_musicas_buscadas() {
+        return bt_musicas_buscadas;
+    }
+
+    public void setBt_musicas_buscadas(JButton bt_musicas_buscadas) {
+        this.bt_musicas_buscadas = bt_musicas_buscadas;
+    }
+
+    public JButton getBt_musicas_curtidas() {
+        return bt_musicas_curtidas;
+    }
+
+    public void setBt_musicas_curtidas(JButton bt_musicas_curtidas) {
+        this.bt_musicas_curtidas = bt_musicas_curtidas;
+    }
+
+    public JButton getBt_musicas_descurtidas() {
+        return bt_musicas_descurtidas;
+    }
+
+    public void setBt_musicas_descurtidas(JButton bt_musicas_descurtidas) {
+        this.bt_musicas_descurtidas = bt_musicas_descurtidas;
+    }
+    
+    public JLabel getLbl_historico() {
+        return lbl_historico;
+    }
+
+    public void setLbl_historico(JLabel lbl_historico) {
+        this.lbl_historico = lbl_historico;
+    }
+
+    public JTextArea getTxt_area_historico() {
+        return txt_area_historico;
+    }
+
+    public void setTxt_area_historico(JTextArea txt_area_historico) {
+        this.txt_area_historico = txt_area_historico;
+    }
+    
+    
+    
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,168 +76,17 @@ public class PaginaHistorico extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jpl_historico_01 = new javax.swing.JPanel();
-        jpl_historico_02 = new javax.swing.JPanel();
-        jpl_historico_03 = new javax.swing.JPanel();
-        jpl_historico_04 = new javax.swing.JPanel();
-        jpl_historico_05 = new javax.swing.JPanel();
-        jpl_historico_06 = new javax.swing.JPanel();
-        jpl_historico_07 = new javax.swing.JPanel();
-        jpl_historico_08 = new javax.swing.JPanel();
-        jpl_historico_09 = new javax.swing.JPanel();
-        jpl_historico_10 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jScrollBar1 = new javax.swing.JScrollBar();
         lbl_historico = new javax.swing.JLabel();
+        bt_musicas_curtidas = new javax.swing.JButton();
+        bt_musicas_descurtidas = new javax.swing.JButton();
+        bt_musicas_buscadas = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_area_historico = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jpl_historico_01.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_01.setPreferredSize(new java.awt.Dimension(598, 80));
-
-        javax.swing.GroupLayout jpl_historico_01Layout = new javax.swing.GroupLayout(jpl_historico_01);
-        jpl_historico_01.setLayout(jpl_historico_01Layout);
-        jpl_historico_01Layout.setHorizontalGroup(
-            jpl_historico_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
-        );
-        jpl_historico_01Layout.setVerticalGroup(
-            jpl_historico_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_02.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_02.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_02Layout = new javax.swing.GroupLayout(jpl_historico_02);
-        jpl_historico_02.setLayout(jpl_historico_02Layout);
-        jpl_historico_02Layout.setHorizontalGroup(
-            jpl_historico_02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_02Layout.setVerticalGroup(
-            jpl_historico_02Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_03.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_03.setPreferredSize(new java.awt.Dimension(598, 80));
-
-        javax.swing.GroupLayout jpl_historico_03Layout = new javax.swing.GroupLayout(jpl_historico_03);
-        jpl_historico_03.setLayout(jpl_historico_03Layout);
-        jpl_historico_03Layout.setHorizontalGroup(
-            jpl_historico_03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_03Layout.setVerticalGroup(
-            jpl_historico_03Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_04.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_04.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_04Layout = new javax.swing.GroupLayout(jpl_historico_04);
-        jpl_historico_04.setLayout(jpl_historico_04Layout);
-        jpl_historico_04Layout.setHorizontalGroup(
-            jpl_historico_04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_04Layout.setVerticalGroup(
-            jpl_historico_04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_05.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_05.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_05Layout = new javax.swing.GroupLayout(jpl_historico_05);
-        jpl_historico_05.setLayout(jpl_historico_05Layout);
-        jpl_historico_05Layout.setHorizontalGroup(
-            jpl_historico_05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_05Layout.setVerticalGroup(
-            jpl_historico_05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_06.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_06.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_06Layout = new javax.swing.GroupLayout(jpl_historico_06);
-        jpl_historico_06.setLayout(jpl_historico_06Layout);
-        jpl_historico_06Layout.setHorizontalGroup(
-            jpl_historico_06Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_06Layout.setVerticalGroup(
-            jpl_historico_06Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_07.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_07.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_07Layout = new javax.swing.GroupLayout(jpl_historico_07);
-        jpl_historico_07.setLayout(jpl_historico_07Layout);
-        jpl_historico_07Layout.setHorizontalGroup(
-            jpl_historico_07Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_07Layout.setVerticalGroup(
-            jpl_historico_07Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_08.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_08.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_08Layout = new javax.swing.GroupLayout(jpl_historico_08);
-        jpl_historico_08.setLayout(jpl_historico_08Layout);
-        jpl_historico_08Layout.setHorizontalGroup(
-            jpl_historico_08Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_08Layout.setVerticalGroup(
-            jpl_historico_08Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_09.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_09.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_09Layout = new javax.swing.GroupLayout(jpl_historico_09);
-        jpl_historico_09.setLayout(jpl_historico_09Layout);
-        jpl_historico_09Layout.setHorizontalGroup(
-            jpl_historico_09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_09Layout.setVerticalGroup(
-            jpl_historico_09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_10.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_10.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_10Layout = new javax.swing.GroupLayout(jpl_historico_10);
-        jpl_historico_10.setLayout(jpl_historico_10Layout);
-        jpl_historico_10Layout.setHorizontalGroup(
-            jpl_historico_10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_10Layout.setVerticalGroup(
-            jpl_historico_10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jScrollBar1.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane1.setViewportView(jScrollBar1);
 
         lbl_historico.setBackground(new java.awt.Color(0, 0, 0));
         lbl_historico.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
@@ -196,27 +95,60 @@ public class PaginaHistorico extends javax.swing.JFrame {
         lbl_historico.setText("Histórico");
         lbl_historico.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        bt_musicas_curtidas.setBackground(new java.awt.Color(255, 0, 204));
+        bt_musicas_curtidas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_musicas_curtidas.setText("Músicas curtidas");
+        bt_musicas_curtidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_musicas_curtidasActionPerformed(evt);
+            }
+        });
+
+        bt_musicas_descurtidas.setBackground(new java.awt.Color(255, 0, 204));
+        bt_musicas_descurtidas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_musicas_descurtidas.setText("Músicas descurtidas");
+        bt_musicas_descurtidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_musicas_descurtidasActionPerformed(evt);
+            }
+        });
+
+        bt_musicas_buscadas.setBackground(new java.awt.Color(255, 0, 204));
+        bt_musicas_buscadas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_musicas_buscadas.setText("Músicas buscadas");
+        bt_musicas_buscadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_musicas_buscadasActionPerformed(evt);
+            }
+        });
+
+        txt_area_historico.setBackground(new java.awt.Color(0, 0, 0));
+        txt_area_historico.setColumns(20);
+        txt_area_historico.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txt_area_historico.setForeground(new java.awt.Color(255, 0, 204));
+        txt_area_historico.setRows(5);
+        jScrollPane1.setViewportView(txt_area_historico);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpl_historico_01, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_02, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_03, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_05, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_06, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_07, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_08, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_09, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_10, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(jpl_historico_04, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(lbl_historico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbl_historico, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(bt_musicas_curtidas, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bt_musicas_descurtidas)
+                                .addGap(52, 52, 52)
+                                .addComponent(bt_musicas_buscadas)))))
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,31 +156,16 @@ public class PaginaHistorico extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(lbl_historico)
-                        .addGap(28, 28, 28)
-                        .addComponent(jpl_historico_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_03, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_04, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_05, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_06, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_07, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_08, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_09, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jpl_historico_10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbl_historico))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 955, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(146, 146, 146)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bt_musicas_buscadas)
+                            .addComponent(bt_musicas_curtidas)
+                            .addComponent(bt_musicas_descurtidas))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -270,61 +187,67 @@ public class PaginaHistorico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_musicas_curtidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_musicas_curtidasActionPerformed
+        // TODO add your handling code here:
+        c.visualizarCurtidas();
+        
+    }//GEN-LAST:event_bt_musicas_curtidasActionPerformed
+
+    private void bt_musicas_descurtidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_musicas_descurtidasActionPerformed
+        // TODO add your handling code here:
+       c.visualizarDescurtidas();
+    }//GEN-LAST:event_bt_musicas_descurtidasActionPerformed
+
+    private void bt_musicas_buscadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_musicas_buscadasActionPerformed
+        // TODO add your handling code here:
+        c.visualizarUltimasBuscas();
+    }//GEN-LAST:event_bt_musicas_buscadasActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaginaHistorico().setVisible(true);
-            }
-        });
-    } 
-
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaginaHistorico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaginaHistorico().setVisible(true);
+//            }
+//        });
+//    } 
+    private ControllerHistorico c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_musicas_buscadas;
+    private javax.swing.JButton bt_musicas_curtidas;
+    private javax.swing.JButton bt_musicas_descurtidas;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel jpl_historico_01;
-    private javax.swing.JPanel jpl_historico_02;
-    private javax.swing.JPanel jpl_historico_03;
-    private javax.swing.JPanel jpl_historico_04;
-    private javax.swing.JPanel jpl_historico_05;
-    private javax.swing.JPanel jpl_historico_06;
-    private javax.swing.JPanel jpl_historico_07;
-    private javax.swing.JPanel jpl_historico_08;
-    private javax.swing.JPanel jpl_historico_09;
-    private javax.swing.JPanel jpl_historico_10;
     private javax.swing.JLabel lbl_historico;
+    private javax.swing.JTextArea txt_area_historico;
     // End of variables declaration//GEN-END:variables
 }

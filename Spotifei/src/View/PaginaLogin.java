@@ -235,6 +235,9 @@ public class PaginaLogin extends javax.swing.JFrame {
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
         // TODO add your handling code here:
         c.loginUsuario();
+        PaginaMenu pc = new PaginaMenu();
+        pc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_bt_entrarActionPerformed
 
     private void bt_menu_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_menu_cadastrarActionPerformed

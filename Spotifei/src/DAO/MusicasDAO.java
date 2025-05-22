@@ -23,37 +23,51 @@ public class MusicasDAO {
 
     public ArrayList<Musicas> buscar(String tipo, String termo) throws SQLException {
         ArrayList<Musicas> lista = new ArrayList<>();
-
-        String coluna;
-        if (tipo.equals("titulo")) {
-            coluna = "m.titulo";
-        } else if (tipo.equals("Artista")) {
-            coluna = "a.nome";
-        } else {
-            coluna = "m.genero";
-        }
-
-        String sql = "SELECT m.id, m.titulo, m.genero, a.nome AS artista " +
-                     "FROM musicas m JOIN artistas a ON m.artista_id = a.id " +
-                     "WHERE LOWER(" + coluna + ") LIKE ?";
-
+        
+        String sql = "SELECT * FROM musica WHERE " + tipo + " ILIKE ?";
         PreparedStatement statement = conn.prepareStatement(sql);
-        statement.setString(1, "%" + termo.toLowerCase() + "%");
+        statement.setString(1, "%" + termo + "%");
+
         ResultSet resultado = statement.executeQuery();
-
+        
         while (resultado.next()) {
-            Artista artista = new Artista(
-                resultado.getString("artista")
-            );
+            Musicas musica = new Musicas();
+            musica.setId(resultado.getInt("id"));
+            musica.setTitulo(resultado.getString("titulo"));
 
-            Musicas musica = new Musicas(
-                resultado.getString("titulo"),
-                resultado.getString("genero"),
-                artista
-            );
+            String nomeArtista = resultado.getString("artista");
+            Artista artista = new Artista(nomeArtista,0);
+            musica.setArtista(artista);
+
+            musica.setGenero(resultado.getString("genero"));
             lista.add(musica);
         }
-
+        
+        resultado.close();
+        statement.close();
+        
         return lista;
+    }
+
+    public void curtirMusica(int usuarioId, int musicaId) throws SQLException {
+        String sql = "INSERT INTO curtida (id, id_usuario, id_musica,curtida) VALUES (?, ?, TRUE) " +
+                     "ON CONFLICT (usuario_id, musica_id) DO UPDATE SET curtir = TRUE";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, usuarioId);
+            stmt.setInt(2, musicaId);
+            stmt.executeUpdate();
+        }
+    }
+
+    public void descurtirMusica(int usuarioId, int musicaId) throws SQLException {
+        String sql = "INSERT INTO curtidas (usuario_id, musica_id, curtir) VALUES (?, ?, FALSE) " +
+                     "ON CONFLICT (usuario_id, musica_id) DO UPDATE SET curtir = FALSE";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, usuarioId);
+            stmt.setInt(2, musicaId);
+            stmt.executeUpdate();
+        }
     }
 }

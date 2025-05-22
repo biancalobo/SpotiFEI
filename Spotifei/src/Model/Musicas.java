@@ -8,20 +8,27 @@ package Model;
  *
  * @author unifbnascimento
  */
+
+// Classe para as músicas
 public class Musicas {
    private String titulo, genero;
    private int id;
    private Artista artista;
 
+   // Construtor não parametrizado
     public Musicas() {
     }
 
+    
+    // Construtor totalmente parametrizado
     public Musicas(String titulo, String genero, Artista artista) {
         this.titulo = titulo;
         this.genero = genero;
         this.artista = artista;
     }
 
+    //Getters e setters da classe Musicas
+    
     public String getTitulo() {
         return titulo;
     }
@@ -54,9 +61,11 @@ public class Musicas {
         this.id = id;
     }
 
+    // toString da classe Musicas
     @Override
     public String toString() {
-        return "Musicas{" + "titulo=" + titulo + ", genero=" + genero + ", id=" + id + ", artista=" + artista + '}';
+        return "ID: " + id + " | Título: " + titulo + " | Gênero: " + genero +
+                                        " | Artista: " + artista.getNome();
     }
 
     

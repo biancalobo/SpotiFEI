@@ -3,79 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
-import DAO.HistoricoDAO;
-import Controller.ControllerBusca;
-import Controller.ControllerCadastro;
+import Controller.ControllerMusicas;
 import Controller.ControllerCurtida;
-import Model.Musicas;
-import Model.Usuario;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JToggleButton;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author unifbnascimento
  */
-public class PaginaBusca extends javax.swing.JFrame {
-    private Usuario usuarioLogado;
+public class PaginaMusicas extends javax.swing.JFrame {
 
     /**
      * Creates new form PaginaBusca
      */
-    public PaginaBusca(Usuario usuario) {
+    public PaginaMusicas() {
         initComponents();
-        this.usuarioLogado = usuario;
-        c = new ControllerBusca(this);
+        c = new ControllerMusicas(this);
+        d = new ControllerCurtida(this);
     }
 
-    public void atualizarTabela(ArrayList<Musicas> lista) {
-    DefaultTableModel model = (DefaultTableModel) tabela.getModel();
-    model.setRowCount(0); // Limpa a tabela antes de adicionar novas linhas
-
-    for (Musicas m : lista) {
-        model.addRow(new Object[]{
-            m.getTitulo(),
-            m.getArtista().getNome(),
-            m.getGenero()
-        });
-    }
-}
-    
-    public PaginaBusca(Usuario usuario) {
-    initComponents();
-    this.usuarioLogado = usuario;
-    c = new ControllerBusca(this);
-    
-    // Escuta seleção na tabela
-    tabela.getSelectionModel().addListSelectionListener(e -> {
-        if (!e.getValueIsAdjusting()) {
-            atualizarBotaoCurtir();
-        }
-    });
-}
-
-private void atualizarBotaoCurtir() {
-    int linha = tabela.getSelectedRow();
-    if (linha != -1) {
-        int musicaId = (int) tabela.getValueAt(linha, 0); // coluna oculta com o ID
-        ControllerCurtida controller = new ControllerCurtida();
-        boolean jaCurtida = controller.isCurtida(usuarioLogado.getId(), musicaId);
-        bt_curtir.setSelected(jaCurtida);
-        bt_curtir.setText(jaCurtida ? "Descurtir" : "Curtir");
-        bt_curtir.setEnabled(true);
-    } else {
-        bt_curtir.setSelected(false);
-        bt_curtir.setText("Curtir");
-        bt_curtir.setEnabled(false);
-    }
-}
     
     public JButton getBt_procurar_musica() {
         return bt_procurar_musica;
@@ -83,14 +32,6 @@ private void atualizarBotaoCurtir() {
 
     public void setBt_procurar_musica(JButton bt_procurar_musica) {
         this.bt_procurar_musica = bt_procurar_musica;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
     }
 
     public JLabel getLb_buscar_musica() {
@@ -101,14 +42,6 @@ private void atualizarBotaoCurtir() {
         this.lb_buscar_musica = lb_buscar_musica;
     }
 
-    public JTable getTabela() {
-        return tabela;
-    }
-
-    public void setTabela(JTable tabela) {
-        this.tabela = tabela;
-    }
-
     public JTextField getTxt_buscar_musica() {
         return txt_buscar_musica;
     }
@@ -117,13 +50,31 @@ private void atualizarBotaoCurtir() {
         this.txt_buscar_musica = txt_buscar_musica;
     }
 
-    public JToggleButton getBt_curtir() {
+    public JButton getBt_curtir() {
         return bt_curtir;
     }
 
-    public void setBt_curtir(JToggleButton bt_curtir) {
+    public void setBt_curtir(JButton bt_curtir) {
         this.bt_curtir = bt_curtir;
     }
+
+    public JButton getBt_descurtir() {
+        return bt_descurtir;
+    }
+
+    public void setBt_descurtir(JButton bt_descurtir) {
+        this.bt_descurtir = bt_descurtir;
+    }
+
+    public JTextArea getTxt_area() {
+        return txt_area;
+    }
+
+    public void setTxt_area(JTextArea txt_area) {
+        this.txt_area = txt_area;
+    }
+
+    
     
     
 
@@ -140,9 +91,10 @@ private void atualizarBotaoCurtir() {
         lb_buscar_musica = new javax.swing.JLabel();
         txt_buscar_musica = new javax.swing.JTextField();
         bt_procurar_musica = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabela = new javax.swing.JTable();
-        bt_curtir = new javax.swing.JToggleButton();
+        bt_curtir = new javax.swing.JButton();
+        bt_descurtir = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txt_area = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -168,44 +120,6 @@ private void atualizarBotaoCurtir() {
             }
         });
 
-        tabela.setBackground(new java.awt.Color(0, 0, 0));
-        tabela.setForeground(new java.awt.Color(255, 0, 153));
-        tabela.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Id", "Título", "Artista", "Gênero"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tabela);
-        if (tabela.getColumnModel().getColumnCount() > 0) {
-            tabela.getColumnModel().getColumn(0).setMinWidth(0);
-            tabela.getColumnModel().getColumn(0).setPreferredWidth(0);
-            tabela.getColumnModel().getColumn(0).setMaxWidth(0);
-            tabela.getColumnModel().getColumn(1).setResizable(false);
-            tabela.getColumnModel().getColumn(2).setResizable(false);
-            tabela.getColumnModel().getColumn(3).setResizable(false);
-        }
-
         bt_curtir.setBackground(new java.awt.Color(255, 0, 153));
         bt_curtir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         bt_curtir.setText("Curtir");
@@ -215,27 +129,39 @@ private void atualizarBotaoCurtir() {
             }
         });
 
+        bt_descurtir.setBackground(new java.awt.Color(255, 0, 153));
+        bt_descurtir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bt_descurtir.setText("Descurtir");
+        bt_descurtir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_descurtirActionPerformed(evt);
+            }
+        });
+
+        txt_area.setBackground(new java.awt.Color(0, 0, 0));
+        txt_area.setColumns(20);
+        txt_area.setRows(5);
+        jScrollPane2.setViewportView(txt_area);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bt_curtir)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lb_buscar_musica)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bt_procurar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 27, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(bt_curtir, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_descurtir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lb_buscar_musica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_procurar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,11 +171,13 @@ private void atualizarBotaoCurtir() {
                     .addComponent(lb_buscar_musica)
                     .addComponent(txt_buscar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_procurar_musica))
-                .addGap(49, 49, 49)
-                .addComponent(bt_curtir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_descurtir)
+                    .addComponent(bt_curtir))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -274,36 +202,18 @@ private void atualizarBotaoCurtir() {
 
     private void bt_procurar_musicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_procurar_musicaActionPerformed
         // TODO add your handling code here:
-    String termo = txt_buscar_musica.getText();
-    String tipo = "nome"; // ou use ComboBox
-
-     ArrayList<Musicas> lista = c.buscar(tipo, termo);
-    atualizarTabela(lista);
-       
+        c.buscarMusica();
     }//GEN-LAST:event_bt_procurar_musicaActionPerformed
 
     private void bt_curtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_curtirActionPerformed
         // TODO add your handling code here:
-        int linha = tabela.getSelectedRow();
-
-    if (linha != -1) {
-        int musicaId = (int) tabela.getValueAt(linha, 0); // ID oculto da música
-        boolean curtir = bt_curtir.isSelected();
-
-        ControllerCurtida controller = new ControllerCurtida();
-        controller.curtir(usuarioLogado.getId(), musicaId, curtir);
-
-        if (curtir) {
-            JOptionPane.showMessageDialog(this, "Música curtida!");
-            bt_curtir.setText("Descurtir");
-        } else {
-            JOptionPane.showMessageDialog(this, "Música descurtida!");
-            bt_curtir.setText("Curtir");
-        }
-    } else {
-        JOptionPane.showMessageDialog(this, "Selecione uma música.");
-    }
+        d.curtirMusica();
     }//GEN-LAST:event_bt_curtirActionPerformed
+
+    private void bt_descurtirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_descurtirActionPerformed
+        // TODO add your handling code here:
+        d.descurtirMusica();
+    }//GEN-LAST:event_bt_descurtirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,14 +249,16 @@ private void atualizarBotaoCurtir() {
 //            }
 //        });
 //    }
-    private ControllerBusca c;
+    private ControllerMusicas c;
+    private ControllerCurtida d;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton bt_curtir;
+    private javax.swing.JButton bt_curtir;
+    private javax.swing.JButton bt_descurtir;
     private javax.swing.JButton bt_procurar_musica;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lb_buscar_musica;
-    private javax.swing.JTable tabela;
+    private javax.swing.JTextArea txt_area;
     private javax.swing.JTextField txt_buscar_musica;
     // End of variables declaration//GEN-END:variables
 

@@ -14,8 +14,8 @@ import java.sql.DriverManager;
 public class Conexao {
     public static Connection getConnection() throws SQLException{
         Connection conexao = DriverManager.getConnection(
-              "jdbc:postgresql://db.nkmcxgihefnxgdaxykmr.supabase.co:5432/postgres", "postgres",
-                                                            "Lobo,svtbz1711");
+              "jdbc:postgresql://db.nkmcxgihefnxgdaxykmr.supabase.co:5432/postgres",
+                "postgres", "Lobo,svtbz1711");
         return conexao;
 }
     }

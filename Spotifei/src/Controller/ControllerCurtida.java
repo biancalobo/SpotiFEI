@@ -3,22 +3,63 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-import java.sql.*;
-import DAO.CurtidasDAO;
+import Model.Musicas;
+import View.PaginaMusicas;
+import DAO.HistoricoDAO;
 import DAO.Conexao;
+import DAO.MusicasDAO;
+import javax.swing.JOptionPane;
+import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author bianc
  */
+// Classe que controla a lógica das curtidas
 public class ControllerCurtida {
-    public void curtir(int usuarioId, int musicaId, boolean curtir) {
+    private PaginaMusicas view;
+    private int usuarioId;
+
+    // Construtor de ControllerCurtida
+    public ControllerCurtida(PaginaMusicas view) {
+        this.view = view;
+    }
+
+    // Método para curtir músicas
+    public void curtirMusica() {
+        String idStr = JOptionPane.showInputDialog("ID da música para curtir:");
+        if (idStr == null || idStr.isEmpty()) return;
+        
         try {
+            int id = Integer.parseInt(idStr);
             Connection conn = Conexao.getConnection();
-            CurtidasDAO dao = new CurtidasDAO(conn);
-            dao.curtir(usuarioId, musicaId, curtir);
-        } catch (SQLException e) {
-            System.out.println("Erro ao curtir a música: " + e.getMessage());
+            MusicasDAO dao = new MusicasDAO(conn);
+
+            dao.curtirMusica(usuarioId, id);
+            JOptionPane.showMessageDialog(view, "Música curtida com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(view, "Erro ao curtir: " +
+                                                    e.getMessage());
+        }
+    }
+
+    public void descurtirMusica() {
+        String idStr = 
+                JOptionPane.showInputDialog("ID da música para descurtir:");
+        if (idStr == null || idStr.isEmpty()) return;
+
+        try {
+            int id = Integer.parseInt(idStr);
+            Connection conn = Conexao.getConnection();
+            MusicasDAO dao = new MusicasDAO(conn);
+
+            dao.descurtirMusica(usuarioId, id);
+            JOptionPane.showMessageDialog(view, 
+                    "Música descurtida com sucesso!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(view, "Erro ao descurtir: " +
+                                                e.getMessage());
         }
     }
     

@@ -3,19 +3,68 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.ControllerPlaylist;
+import javax.swing.*;
+import java.awt.event.*;
+
 
 /**
  *
  * @author bianc
  */
 public class PaginaPlaylist extends javax.swing.JFrame {
+    private int idUsuario;
 
     /**
      * Creates new form PaginaPlaylist
      */
     public PaginaPlaylist() {
         initComponents();
+        c = new ControllerPlaylist(this, idUsuario);
+
     }
+
+    public JButton getBt_criar_playlist() {
+        return bt_criar_playlist;
+    }
+
+    public void setBt_criar_playlist(JButton bt_criar_playlist) {
+        this.bt_criar_playlist = bt_criar_playlist;
+    }
+
+    public JButton getBt_pesquisar_playlist() {
+        return bt_listar_playlist;
+    }
+
+    public void setBt_pesquisar_playlist(JButton bt_pesquisar_playlist) {
+        this.bt_listar_playlist = bt_pesquisar_playlist;
+    }
+
+    public JLabel getLbl_biblioteca() {
+        return lbl_biblioteca;
+    }
+
+    public void setLbl_biblioteca(JLabel lbl_biblioteca) {
+        this.lbl_biblioteca = lbl_biblioteca;
+    }
+
+    public JTextArea getTxt_area_playlist() {
+        return txt_area_playlist;
+    }
+
+    public void setTxt_area_playlist(JTextArea txt_area_playlist) {
+        this.txt_area_playlist = txt_area_playlist;
+    }
+
+    public JButton getBt_listar_playlist() {
+        return bt_listar_playlist;
+    }
+
+    public void setBt_listar_playlist(JButton bt_listar_playlist) {
+        this.bt_listar_playlist = bt_listar_playlist;
+    }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,121 +75,20 @@ public class PaginaPlaylist extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpl_historico_04 = new javax.swing.JPanel();
-        jpl_historico_05 = new javax.swing.JPanel();
-        jpl_historico_01 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
-        jpl_playlist_01 = new javax.swing.JPanel();
-        bt_excluir_playlist1 = new javax.swing.JButton();
-        bt_editar_playlist1 = new javax.swing.JButton();
         lbl_biblioteca = new javax.swing.JLabel();
         bt_criar_playlist = new javax.swing.JButton();
-        jpl_playlist_2 = new javax.swing.JPanel();
-        bt_excluir_playlist3 = new javax.swing.JButton();
-        bt_editar_playlist3 = new javax.swing.JButton();
-        jpl_playlist_3 = new javax.swing.JPanel();
-        bt_excluir_playlist4 = new javax.swing.JButton();
-        bt_editar_playlist4 = new javax.swing.JButton();
-        jpl_playlist_7 = new javax.swing.JPanel();
-        bt_excluir_playlist5 = new javax.swing.JButton();
-        bt_editar_playlist5 = new javax.swing.JButton();
-        jpl_playlist_8 = new javax.swing.JPanel();
-        bt_excluir_playlist6 = new javax.swing.JButton();
-        bt_editar_playlist6 = new javax.swing.JButton();
-        jpl_playlist_9 = new javax.swing.JPanel();
-        bt_excluir_playlist7 = new javax.swing.JButton();
-        bt_editar_playlist7 = new javax.swing.JButton();
+        bt_listar_playlist = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt_area_playlist = new javax.swing.JTextArea();
+        bt_remover_musica = new javax.swing.JButton();
+        bt_adicionar_musica = new javax.swing.JButton();
+        bt_remover_playlist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        jpl_historico_04.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_04.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_04Layout = new javax.swing.GroupLayout(jpl_historico_04);
-        jpl_historico_04.setLayout(jpl_historico_04Layout);
-        jpl_historico_04Layout.setHorizontalGroup(
-            jpl_historico_04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_04Layout.setVerticalGroup(
-            jpl_historico_04Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_05.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_05.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        javax.swing.GroupLayout jpl_historico_05Layout = new javax.swing.GroupLayout(jpl_historico_05);
-        jpl_historico_05.setLayout(jpl_historico_05Layout);
-        jpl_historico_05Layout.setHorizontalGroup(
-            jpl_historico_05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpl_historico_05Layout.setVerticalGroup(
-            jpl_historico_05Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jpl_historico_01.setBackground(new java.awt.Color(51, 51, 51));
-        jpl_historico_01.setPreferredSize(new java.awt.Dimension(598, 80));
-
-        javax.swing.GroupLayout jpl_historico_01Layout = new javax.swing.GroupLayout(jpl_historico_01);
-        jpl_historico_01.setLayout(jpl_historico_01Layout);
-        jpl_historico_01Layout.setHorizontalGroup(
-            jpl_historico_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 761, Short.MAX_VALUE)
-        );
-        jpl_historico_01Layout.setVerticalGroup(
-            jpl_historico_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-
-        jScrollBar1.setBackground(new java.awt.Color(51, 51, 51));
-        jScrollBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jScrollPane1.setViewportView(jScrollBar1);
-
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jpl_playlist_01.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_01.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_01.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist1.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist1.setText("Excluir");
-        bt_excluir_playlist1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist1ActionPerformed(evt);
-            }
-        });
-
-        bt_editar_playlist1.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist1.setText("Editar");
-
-        javax.swing.GroupLayout jpl_playlist_01Layout = new javax.swing.GroupLayout(jpl_playlist_01);
-        jpl_playlist_01.setLayout(jpl_playlist_01Layout);
-        jpl_playlist_01Layout.setHorizontalGroup(
-            jpl_playlist_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_01Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_01Layout.setVerticalGroup(
-            jpl_playlist_01Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_01Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist1)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
 
         lbl_biblioteca.setBackground(new java.awt.Color(0, 0, 0));
         lbl_biblioteca.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
@@ -158,367 +106,191 @@ public class PaginaPlaylist extends javax.swing.JFrame {
             }
         });
 
-        jpl_playlist_2.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_2.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist3.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist3.setText("Excluir");
-        bt_excluir_playlist3.addActionListener(new java.awt.event.ActionListener() {
+        bt_listar_playlist.setBackground(new java.awt.Color(255, 0, 153));
+        bt_listar_playlist.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_listar_playlist.setText("Listar playlists");
+        bt_listar_playlist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist3ActionPerformed(evt);
+                bt_listar_playlistActionPerformed(evt);
             }
         });
 
-        bt_editar_playlist3.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist3.setText("Editar");
+        txt_area_playlist.setBackground(new java.awt.Color(0, 0, 0));
+        txt_area_playlist.setColumns(20);
+        txt_area_playlist.setForeground(new java.awt.Color(255, 0, 153));
+        txt_area_playlist.setRows(5);
+        jScrollPane1.setViewportView(txt_area_playlist);
 
-        javax.swing.GroupLayout jpl_playlist_2Layout = new javax.swing.GroupLayout(jpl_playlist_2);
-        jpl_playlist_2.setLayout(jpl_playlist_2Layout);
-        jpl_playlist_2Layout.setHorizontalGroup(
-            jpl_playlist_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_2Layout.setVerticalGroup(
-            jpl_playlist_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist3)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        jpl_playlist_3.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_3.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist4.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist4.setText("Excluir");
-        bt_excluir_playlist4.addActionListener(new java.awt.event.ActionListener() {
+        bt_remover_musica.setBackground(new java.awt.Color(255, 0, 153));
+        bt_remover_musica.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_remover_musica.setText("Remover música");
+        bt_remover_musica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist4ActionPerformed(evt);
+                bt_remover_musicaActionPerformed(evt);
             }
         });
 
-        bt_editar_playlist4.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist4.setText("Editar");
-
-        javax.swing.GroupLayout jpl_playlist_3Layout = new javax.swing.GroupLayout(jpl_playlist_3);
-        jpl_playlist_3.setLayout(jpl_playlist_3Layout);
-        jpl_playlist_3Layout.setHorizontalGroup(
-            jpl_playlist_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_3Layout.setVerticalGroup(
-            jpl_playlist_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist4)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        jpl_playlist_7.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_7.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist5.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist5.setText("Excluir");
-        bt_excluir_playlist5.addActionListener(new java.awt.event.ActionListener() {
+        bt_adicionar_musica.setBackground(new java.awt.Color(255, 0, 153));
+        bt_adicionar_musica.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_adicionar_musica.setText("Adicionar música");
+        bt_adicionar_musica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist5ActionPerformed(evt);
+                bt_adicionar_musicaActionPerformed(evt);
             }
         });
 
-        bt_editar_playlist5.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist5.setText("Editar");
-
-        javax.swing.GroupLayout jpl_playlist_7Layout = new javax.swing.GroupLayout(jpl_playlist_7);
-        jpl_playlist_7.setLayout(jpl_playlist_7Layout);
-        jpl_playlist_7Layout.setHorizontalGroup(
-            jpl_playlist_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_7Layout.setVerticalGroup(
-            jpl_playlist_7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_7Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist5)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        jpl_playlist_8.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_8.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist6.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist6.setText("Excluir");
-        bt_excluir_playlist6.addActionListener(new java.awt.event.ActionListener() {
+        bt_remover_playlist.setBackground(new java.awt.Color(255, 0, 153));
+        bt_remover_playlist.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bt_remover_playlist.setText("Excluir playlist");
+        bt_remover_playlist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist6ActionPerformed(evt);
+                bt_remover_playlistActionPerformed(evt);
             }
         });
-
-        bt_editar_playlist6.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist6.setText("Editar");
-
-        javax.swing.GroupLayout jpl_playlist_8Layout = new javax.swing.GroupLayout(jpl_playlist_8);
-        jpl_playlist_8.setLayout(jpl_playlist_8Layout);
-        jpl_playlist_8Layout.setHorizontalGroup(
-            jpl_playlist_8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_8Layout.setVerticalGroup(
-            jpl_playlist_8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_8Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist6)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        jpl_playlist_9.setBackground(new java.awt.Color(0, 0, 0));
-        jpl_playlist_9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jpl_playlist_9.setPreferredSize(new java.awt.Dimension(0, 80));
-
-        bt_excluir_playlist7.setBackground(new java.awt.Color(255, 0, 153));
-        bt_excluir_playlist7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_excluir_playlist7.setText("Excluir");
-        bt_excluir_playlist7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_excluir_playlist7ActionPerformed(evt);
-            }
-        });
-
-        bt_editar_playlist7.setBackground(new java.awt.Color(255, 0, 153));
-        bt_editar_playlist7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        bt_editar_playlist7.setText("Editar");
-
-        javax.swing.GroupLayout jpl_playlist_9Layout = new javax.swing.GroupLayout(jpl_playlist_9);
-        jpl_playlist_9.setLayout(jpl_playlist_9Layout);
-        jpl_playlist_9Layout.setHorizontalGroup(
-            jpl_playlist_9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpl_playlist_9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(bt_editar_playlist7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bt_excluir_playlist7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(23, 23, 23))
-        );
-        jpl_playlist_9Layout.setVerticalGroup(
-            jpl_playlist_9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpl_playlist_9Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(bt_editar_playlist7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_excluir_playlist7)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl_biblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(bt_criar_playlist))
-                    .addComponent(jpl_playlist_01, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(lbl_biblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(jpl_playlist_2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(jpl_playlist_3, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(jpl_playlist_7, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(jpl_playlist_8, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                    .addComponent(jpl_playlist_9, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(bt_criar_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(bt_listar_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(87, 87, 87))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(bt_remover_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bt_adicionar_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bt_remover_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(52, 52, 52)
                 .addComponent(lbl_biblioteca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_criar_playlist)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jpl_playlist_9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bt_criar_playlist)
+                            .addComponent(bt_adicionar_musica))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bt_remover_playlist)
+                            .addComponent(bt_remover_musica))
+                        .addGap(34, 34, 34))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(bt_listar_playlist)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jpl_historico_01, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
-                        .addComponent(jpl_historico_05, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE)
-                        .addComponent(jpl_historico_04, javax.swing.GroupLayout.DEFAULT_SIZE, 761, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(jpl_historico_01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(178, 178, 178)
-                            .addComponent(jpl_historico_04, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jpl_historico_05, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bt_excluir_playlist1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist1ActionPerformed
+    private void bt_listar_playlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_listar_playlistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist1ActionPerformed
+        c.listarPlaylists();
+    }//GEN-LAST:event_bt_listar_playlistActionPerformed
 
     private void bt_criar_playlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_criar_playlistActionPerformed
         // TODO add your handling code here:
+        c.criarPlaylist();
     }//GEN-LAST:event_bt_criar_playlistActionPerformed
 
-    private void bt_excluir_playlist3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist3ActionPerformed
+    private void bt_remover_musicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_remover_musicaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist3ActionPerformed
+        c.removerMusicaDaPlaylist();
+    }//GEN-LAST:event_bt_remover_musicaActionPerformed
 
-    private void bt_excluir_playlist4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist4ActionPerformed
+    private void bt_adicionar_musicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_adicionar_musicaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist4ActionPerformed
+        c.adicionarMusicaNaPlaylist();
+    }//GEN-LAST:event_bt_adicionar_musicaActionPerformed
 
-    private void bt_excluir_playlist5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist5ActionPerformed
+    private void bt_remover_playlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_remover_playlistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist5ActionPerformed
-
-    private void bt_excluir_playlist6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist6ActionPerformed
-
-    private void bt_excluir_playlist7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_excluir_playlist7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_excluir_playlist7ActionPerformed
+        c.excluirPlaylist();
+    }//GEN-LAST:event_bt_remover_playlistActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaginaPlaylist().setVisible(true);
-            }
-        });
-    }
-
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(PaginaPlaylist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new PaginaPlaylist().setVisible(true);
+//            }
+//        });
+//    }
+    private ControllerPlaylist c;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_adicionar_musica;
     private javax.swing.JButton bt_criar_playlist;
-    private javax.swing.JButton bt_editar_playlist1;
-    private javax.swing.JButton bt_editar_playlist3;
-    private javax.swing.JButton bt_editar_playlist4;
-    private javax.swing.JButton bt_editar_playlist5;
-    private javax.swing.JButton bt_editar_playlist6;
-    private javax.swing.JButton bt_editar_playlist7;
-    private javax.swing.JButton bt_excluir_playlist1;
-    private javax.swing.JButton bt_excluir_playlist3;
-    private javax.swing.JButton bt_excluir_playlist4;
-    private javax.swing.JButton bt_excluir_playlist5;
-    private javax.swing.JButton bt_excluir_playlist6;
-    private javax.swing.JButton bt_excluir_playlist7;
+    private javax.swing.JButton bt_listar_playlist;
+    private javax.swing.JButton bt_remover_musica;
+    private javax.swing.JButton bt_remover_playlist;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel jpl_historico_01;
-    private javax.swing.JPanel jpl_historico_04;
-    private javax.swing.JPanel jpl_historico_05;
-    private javax.swing.JPanel jpl_playlist_01;
-    private javax.swing.JPanel jpl_playlist_2;
-    private javax.swing.JPanel jpl_playlist_3;
-    private javax.swing.JPanel jpl_playlist_7;
-    private javax.swing.JPanel jpl_playlist_8;
-    private javax.swing.JPanel jpl_playlist_9;
     private javax.swing.JLabel lbl_biblioteca;
+    private javax.swing.JTextArea txt_area_playlist;
     // End of variables declaration//GEN-END:variables
 }

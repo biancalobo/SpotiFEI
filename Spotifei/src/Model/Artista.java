@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
-import java.time.LocalDate;
 
 /**
  *
@@ -12,13 +11,14 @@ import java.time.LocalDate;
 public class Artista {
     private String nome;
     private int id;
-   
-    public Artista(){
-        
-    }
 
-    public Artista(String nome) {
+    public Artista() {
+    }
+    
+   
+    public Artista(String nome, int id) {
         this.nome = nome;
+        this.id = id;
     }
 
     public String getNome() {
